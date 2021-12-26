@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Animals
+
+@{
+    ViewBag.Title = "AddAnimal";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>yeni hayvan ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddAnimal", "AdminAnimals", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Hayvan Adı")
+        @Html.TextBoxFor(x => x.AnimalName,new { @class = "form-control" }) 
+        @Html.ValidationMessageFor(x => x.AnimalName)
+        <br /> <br />
+        @Html.Label("Hayvan Türü")
+        @Html.TextBoxFor(x => x.AnimalType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimalType)
+        <br /> <br />
+        <button class="btn btn-info">hayvan kaydet</button>
+    </div>
+}

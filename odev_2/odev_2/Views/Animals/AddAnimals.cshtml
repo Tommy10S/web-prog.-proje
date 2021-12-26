@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Animals
+
+@{
+    Layout = null;
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<h1>yeni hayvan ekleme sayfası</h1>
+<br />
+@using(Html.BeginForm("AddAnimals","Animals",FormMethod.Post))
+{ 
+    <div class="form-group">
+        @Html.Label("Hayvan Adı")
+        @Html.TextBoxFor(x=>x.AnimalName)
+        @Html.ValidationMessageFor(x => x.AnimalName)
+        <br /> <br />
+        @Html.Label("Hayvan Türü")
+        @Html.TextBoxFor(x=>x.AnimalType)
+        @Html.ValidationMessageFor(x=>x.AnimalType)
+        <br /> <br />
+        <button>hayvan kaydet</button>
+    </div>
+}
+
+@*<form class="form-group" method="post">
+
+    <input type="text" placeholder="Hayvan Adı" name="AnimalName" class="form-control" />
+    <input type="text" placeholder="Hayvan türü" name="AnimalType" class="form-control" />
+    <button class="btn btn-primary">Ekle</button>
+</form>*@

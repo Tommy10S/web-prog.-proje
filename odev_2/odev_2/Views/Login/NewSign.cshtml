@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Member
+
+@{
+    ViewBag.Title = "NewSign";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<h1>üye olma</h1>
+<br />
+@using (Html.BeginForm("NewSign", "Login", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.memberName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.memberName)
+    <br /> <br />
+    @Html.Label("soyad")
+    @Html.TextBoxFor(x => x.memberSurName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.memberSurName)
+    <br /> <br />
+    @Html.Label("email")
+    @Html.TextBoxFor(x => x.memberEmail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.memberEmail)
+    <br /> <br />
+    @Html.Label("şifre")
+    @Html.TextBoxFor(x => x.memberPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.memberPassword)
+    <br /> <br />
+    <button class="btn btn-success">üye ol</button>
+</div>
+}
+
